@@ -17,7 +17,9 @@
 - [x] 연사·큰 눈덩이·산탄 아이템, 중첩 상한·배율·출현 빈도 관리
 - [x] 포인트 증감, 동일 적 3연속 명중 Perfect, 일시정지, 결과 통계, 최고 점수 저장
 - [x] README 사용/설정/연동/확인 절차와 최상위 index ZIP 스크립트
-- [x] ZIP 생성 및 내부 최상위 `index.html` 확인 (10개 항목, 22,702 bytes)
+- [x] JavaScript 전체 `node --check` 통과
+- [x] ZIP 생성 및 내부 최상위 `index.html` 확인 (11개 항목, 23,117 bytes)
+- [x] 게임 파일 경로에서 외부 URL 참조 없음 확인
 
 ## 파일 구조
 
@@ -25,18 +27,18 @@
 
 ## Git 동기화 상태와 제약
 
-- 워크스페이스의 현재 저장소 `origin`은 `https://github.com/tomjovi/_Develope.git`이며 요청한 저장소와 다릅니다. 따라서 해당 origin으로 동기화/푸시하지 않습니다.
+- 워크스페이스의 부모 저장소 `origin`은 `https://github.com/tomjovi/_Develope.git`이며 요청한 저장소와 다릅니다. 이 게임은 대상 폴더 안에 독립 Git 저장소를 만들고 지정 원격을 별도로 연결했습니다. 부모 저장소를 동기화/푸시하지 않습니다.
 - 지정 저장소 `git ls-remote --symref https://github.com/tomjovi/tcafe_snow_war_3.git HEAD refs/heads/main` 조회를 시도했지만 시스템 credential helper가 `/usr/bin/gh`를 호출하다 실패했습니다 (`gh: not found`). 저장소 상태와 원격 변경을 확인하지 못했습니다.
-- credential helper를 비활성화한 동일 조회는 종료 코드 0, 출력 없음이었습니다. 요청한 `HEAD`와 `refs/heads/main`이 보이지 않았지만 원격 전체 ref 조회는 응답이 지연되어 중단했습니다. 즉 main 동기화 및 원격 상태는 아직 미완료입니다.
+- credential helper를 비활성화한 동일 조회는 종료 코드 0, 출력 없음이었습니다. 요청한 `HEAD`와 `refs/heads/main` ref가 없어 새 main 브랜치를 초기화했습니다.
+- 초기 커밋을 지정 GitHub 저장소의 `main`으로 push했고 성공 응답을 받았습니다. 브랜치는 `origin/main`을 추적합니다. 로컬 push 중 credential helper의 `gh: not found` 경고가 있었지만 push 자체는 완료됐습니다.
 - 저장소 생성/clone/fetch/push를 다시 하기 전, 가능하면 GitHub 인증 도구를 사용할 수 있는지 확인하세요. 현재 폴더만 대상으로 작업하고 다른 경로를 checkout/복사하지 마세요. 원격 인증이 회복되면 기존 main을 먼저 fetch해 병합 여부를 확인한 후 `tcafe_snow_war_3` 하위 경로만 안전하게 동기화하세요. 단, 이 폴더는 부모 저장소에서는 아직 미추적(untracked) 디렉터리였고 별도 Git 메타데이터는 확인되지 않았습니다.
 
 ## 다음 작업
 
-1. 브라우저 Console에서 JS 문법/런타임 오류를 확인합니다. 특히 모바일 포인터 드래그/발사, 스페이스 충전, 설정 저장, Perfect 포인트, 30초 종료를 실제 플레이로 점검합니다.
-2. 게임 난이도/아이템 중첩 체감 및 세로·가로 레이아웃을 다듬습니다.
-3. `bash build-zip.sh`로 ZIP을 재생성합니다. ZIP 최상위 `index.html` 포함은 확인했으며, 소스 변경 후에는 다시 확인하세요.
-4. 이 문서의 완료/검증/Git 동기화 항목을 갱신합니다.
-5. GitHub 원격 인증이 가능한 시점에 지정 저장소 `main`을 fetch해 동기화합니다. 아직 main ref가 보이지 않아 원격에 대한 commit/push는 하지 않았습니다. 현재 개발 파일은 부모 저장소에서 untracked이며, 작업 트리에는 무관한 untracked 파일이 많으니 `git add .` 또는 전체 경로 커밋을 하지 마세요.
+1. 실제 브라우저 Console에서 런타임 동작을 확인합니다. 구문 검사는 통과했지만 브라우저 플레이는 아직 수행하지 않았습니다. 모바일 드래그·발사, 충전샷, 설정 저장, Perfect 포인트, 30초 종료를 점검합니다.
+2. 난이도 체감과 모바일 세로·가로 레이아웃을 다듬습니다.
+3. 소스 변경 뒤 `bash build-zip.sh`로 ZIP을 다시 만들고 최상위 `index.html` 및 용량을 확인합니다.
+4. HANDOFF를 갱신하고, 프로젝트 내부 Git에서 지정 원격 `main`과 동기화합니다. 부모 워크스페이스에는 무관한 untracked 파일이 많으므로 부모 저장소에서 `git add .`나 전체 경로 커밋을 하지 마세요.
 
 ## 연동 필드
 
