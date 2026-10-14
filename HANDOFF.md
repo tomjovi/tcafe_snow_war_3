@@ -43,3 +43,9 @@
 ## 연동 필드
 
 런타임 포인트는 `window.gameState.snow_war_point`와 `window.getSnowWarPoint()`로 읽습니다. UI에는 내부 필드명을 노출하지 않습니다.
+
+## 제출 Release
+
+- GitHub Release: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.0
+- 제출 ZIP: https://github.com/tomjovi/tcafe_snow_war_3/releases/download/v1.0.0/noemdeulida-snow-war.zip
+- 업로드 자산 크기: 23,117 bytes. Release API에서 자산명과 크기를 확인했습니다.
