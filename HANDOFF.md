@@ -30,7 +30,7 @@
 - 워크스페이스의 부모 저장소 `origin`은 `https://github.com/tomjovi/_Develope.git`이며 요청한 저장소와 다릅니다. 이 게임은 대상 폴더 안에 독립 Git 저장소를 만들고 지정 원격을 별도로 연결했습니다. 부모 저장소를 동기화/푸시하지 않습니다.
 - 지정 저장소 `git ls-remote --symref https://github.com/tomjovi/tcafe_snow_war_3.git HEAD refs/heads/main` 조회를 시도했지만 시스템 credential helper가 `/usr/bin/gh`를 호출하다 실패했습니다 (`gh: not found`). 저장소 상태와 원격 변경을 확인하지 못했습니다.
 - credential helper를 비활성화한 동일 조회는 종료 코드 0, 출력 없음이었습니다. 요청한 `HEAD`와 `refs/heads/main` ref가 없어 새 main 브랜치를 초기화했습니다.
-- 초기 커밋을 지정 GitHub 저장소의 `main`으로 push했고 성공 응답을 받았습니다. 브랜치는 `origin/main`을 추적합니다. 로컬 push 중 credential helper의 `gh: not found` 경고가 있었지만 push 자체는 완료됐습니다.
+- 게임 구현 커밋 `1ede12d`와 동시 입력 수정 커밋 `c2ce00a`를 지정 GitHub 저장소의 `main`으로 push했고 성공 응답을 받았습니다. 브랜치는 `origin/main`을 추적하며 마지막 원격 확인에서 `refs/heads/main`은 `c2ce00a`였습니다. 로컬 push 중 credential helper의 `gh: not found` 경고가 있었지만 push 자체는 완료됐습니다.
 - 저장소 생성/clone/fetch/push를 다시 하기 전, 가능하면 GitHub 인증 도구를 사용할 수 있는지 확인하세요. 현재 폴더만 대상으로 작업하고 다른 경로를 checkout/복사하지 마세요. 원격 인증이 회복되면 기존 main을 먼저 fetch해 병합 여부를 확인한 후 `tcafe_snow_war_3` 하위 경로만 안전하게 동기화하세요. 단, 이 폴더는 부모 저장소에서는 아직 미추적(untracked) 디렉터리였고 별도 Git 메타데이터는 확인되지 않았습니다.
 
 ## 다음 작업
