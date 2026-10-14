@@ -1,0 +1,4 @@
+/* 네이티브 버튼도 페이지의 글꼴을 상속해 플랫폼별 기본 스타일 차이를 줄입니다. */
+button { font: inherit; }
+.button { font-weight: 700; font-size: 14px; }
+.settings-card .button { font-size: 12px; }
