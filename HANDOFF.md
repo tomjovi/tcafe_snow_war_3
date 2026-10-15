@@ -55,7 +55,7 @@
 - 기존 GitHub Release v1.0.0: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.0
 - 이전 제출 GitHub Release v1.0.1: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.1
 - 최신 제출 GitHub Release v1.0.2: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.2
-- v1.0.2 ZIP은 게임 푸터에 버전 표시를 추가한 최신 HTML/CSS를 포함합니다. (빌드 및 업로드 후 자산 크기 기록)
+- v1.0.2 ZIP은 게임 푸터에 버전 표시를 추가한 최신 HTML/CSS를 포함합니다. 자산 크기 24,492 bytes.
 
 ## GitHub Pages 상태
 
@@ -64,4 +64,4 @@
 - 서비스 URL: https://tomjovi.github.io/tcafe_snow_war_3/
 - 실제 URL에서 HTTP 200과 게임 HTML의 `gameCanvas` 진입점을 확인했습니다.
 - v1.0.1 게임 커밋은 원격 `main`과 동기화했고, v1.0.1 Release의 ZIP 업로드를 확인했습니다.
-- v1.0.2 버전 표시 변경은 아직 커밋/배포 전입니다. 다음 단계는 빌드, main push, GitHub Release 생성, Pages 반영 확인입니다.
+- 버전 UI 변경 커밋 `521ffb6`을 `main`에 push하고 v1.0.2 Release 자산 업로드를 완료했습니다. Pages build `1286443002`가 해당 커밋으로 `built` 상태이며, 캐시 우회 요청에서 HTTP 200과 `VERSION v1.0.2` 표시를 확인했습니다.
