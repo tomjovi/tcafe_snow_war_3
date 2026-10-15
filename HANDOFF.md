@@ -49,3 +49,9 @@
 - GitHub Release: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.0
 - 제출 ZIP: https://github.com/tomjovi/tcafe_snow_war_3/releases/download/v1.0.0/noemdeulida-snow-war.zip
 - 업로드 자산 크기: 23,117 bytes. Release API에서 자산명과 크기를 확인했습니다.
+
+## GitHub Pages 상태
+
+- 요청된 Pages 설정은 `main` 브랜치 루트(`index.html`)로 시도했으나 GitHub API가 422로 거부했습니다: `Your current plan does not support GitHub Pages for this repository.`
+- 저장소 API에서 공개 범위는 `private`, 기본 브랜치는 `main`으로 확인했습니다. 공개 저장소 전환 또는 Pages를 지원하는 플랜이 필요합니다.
+- 저장소 공개는 소스와 이력을 누구나 볼 수 있게 바꾸므로 사용자 승인 없이 변경하지 않았습니다. 승인 후 Pages API를 다시 설정하고 `https://tomjovi.github.io/tcafe_snow_war_3/` 배포 상태를 확인하세요.
