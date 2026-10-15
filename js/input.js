@@ -2,8 +2,15 @@
 window.SnowInput = class SnowInput {
   constructor(canvas, callbacks) {
     this.canvas = canvas; this.callbacks = callbacks; this.keys = new Set(); this.heldSources = new Set(); this.pointerDown = false; this.pointerId = null; this.lastPointerX = null;
-    canvas.addEventListener('pointerdown', e => { if (e.button !== undefined && e.button !== 0) return; e.preventDefault(); canvas.setPointerCapture?.(e.pointerId); this.pointerDown = true; this.pointerId = e.pointerId; this.lastPointerX = e.clientX; callbacks.move(this.localX(e.clientX)); this.press('pointer'); });
-    canvas.addEventListener('pointermove', e => { if (!this.pointerDown || e.pointerId !== this.pointerId) return; e.preventDefault(); callbacks.move(this.localX(e.clientX)); });
+    canvas.addEventListener('pointerdown', e => { if (e.button !== undefined && e.button !== 0) return; e.preventDefault(); canvas.setPointerCapture?.(e.pointerId); this.pointerDown = true; this.pointerId = e.pointerId; this.lastPointerX = this.localX(e.clientX); if (e.pointerType !== 'touch') callbacks.move(this.lastPointerX); this.press('pointer'); });
+    canvas.addEventListener('pointermove', e => {
+      if (!this.pointerDown || e.pointerId !== this.pointerId) return;
+      e.preventDefault();
+      const currentX = this.localX(e.clientX);
+      if (e.pointerType === 'touch') callbacks.moveBy(currentX - this.lastPointerX);
+      else callbacks.move(currentX);
+      this.lastPointerX = currentX;
+    });
     const release = e => { if (!this.pointerDown || (e && e.pointerId !== this.pointerId)) return; this.pointerDown = false; this.pointerId = null; this.release('pointer'); };
     canvas.addEventListener('pointerup', release); canvas.addEventListener('pointercancel', release); canvas.addEventListener('lostpointercapture', release);
     window.addEventListener('keydown', e => { if (['ArrowLeft', 'ArrowRight', 'Space'].includes(e.code)) e.preventDefault(); if (e.code === 'Space' && !e.repeat) this.press('keyboard'); this.keys.add(e.code); });

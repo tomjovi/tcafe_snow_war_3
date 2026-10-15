@@ -1,7 +1,8 @@
 /* 밸런싱 숫자를 한곳에서 관리합니다. 속도 단위는 초당 논리 픽셀입니다. */
 window.SnowConfig = {
   storageKey: 'snowWar3Settings',
-  bestKey: 'snowWar3Best',
+  bestKey: 'snowWar3Best10P',
+  legacyBestKey: 'snowWar3Best',
   duration: 30,
   playerMoveSpeed: 560,
   chargeSeconds: 1,

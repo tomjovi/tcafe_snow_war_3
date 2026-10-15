@@ -2,3 +2,5 @@
 button { font: inherit; }
 .button { font-weight: 700; font-size: 14px; }
 .settings-card .button { font-size: 12px; }
+.result-card .button-row { display: grid; grid-template-columns: 1.15fr 1.2fr .8fr; gap: 8px; }
+.result-card .button-row .button { min-width: 0; padding-inline: 8px; font-size: 12px; }
