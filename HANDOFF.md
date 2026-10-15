@@ -36,8 +36,8 @@
 - 워크스페이스의 부모 저장소 `origin`은 `https://github.com/tomjovi/_Develope.git`이며 요청한 저장소와 다릅니다. 이 게임은 대상 폴더 안에 독립 Git 저장소를 만들고 지정 원격을 별도로 연결했습니다. 부모 저장소를 동기화/푸시하지 않습니다.
 - 지정 저장소 `git ls-remote --symref https://github.com/tomjovi/tcafe_snow_war_3.git HEAD refs/heads/main` 조회를 시도했지만 시스템 credential helper가 `/usr/bin/gh`를 호출하다 실패했습니다 (`gh: not found`). 저장소 상태와 원격 변경을 확인하지 못했습니다.
 - credential helper를 비활성화한 동일 조회는 종료 코드 0, 출력 없음이었습니다. 요청한 `HEAD`와 `refs/heads/main` ref가 없어 새 main 브랜치를 초기화했습니다.
-- 게임 구현 커밋 `1ede12d`와 동시 입력 수정 커밋 `c2ce00a`를 지정 GitHub 저장소의 `main`으로 push했고 성공 응답을 받았습니다. 브랜치는 `origin/main`을 추적하며 마지막 원격 확인에서 `refs/heads/main`은 `c2ce00a`였습니다. 로컬 push 중 credential helper의 `gh: not found` 경고가 있었지만 push 자체는 완료됐습니다.
-- 저장소 생성/clone/fetch/push를 다시 하기 전, 가능하면 GitHub 인증 도구를 사용할 수 있는지 확인하세요. 현재 폴더만 대상으로 작업하고 다른 경로를 checkout/복사하지 마세요. 원격 인증이 회복되면 기존 main을 먼저 fetch해 병합 여부를 확인한 후 `tcafe_snow_war_3` 하위 경로만 안전하게 동기화하세요. 단, 이 폴더는 부모 저장소에서는 아직 미추적(untracked) 디렉터리였고 별도 Git 메타데이터는 확인되지 않았습니다.
+- 최신 개선 커밋 `64ae888` 및 배포 인수인계 커밋 `f4ac61e`를 2026-10-15에 지정 GitHub 저장소 `main`으로 push했습니다. 이어 이 문서의 릴리스 상태도 갱신해 원격 동기화할 예정입니다.
+- GitHub CLI 인증은 사용자의 `gh auth login` 이후 `/config/.local/bin/gh auth setup-git`으로 Git credential에 연결했습니다. push 시 `/usr/bin/gh` 경로 오류가 있었으나 credential helper 설정 후 정상 전송을 확인했습니다.
 
 ## 다음 작업
 
@@ -52,9 +52,10 @@
 
 ## 제출 Release
 
-- GitHub Release: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.0
-- 제출 ZIP: https://github.com/tomjovi/tcafe_snow_war_3/releases/download/v1.0.0/noemdeulida-snow-war.zip
-- 업로드 자산 크기: 23,117 bytes. Release API에서 자산명과 크기를 확인했습니다.
+- 기존 GitHub Release v1.0.0: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.0
+- 최신 제출 GitHub Release v1.0.1: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.1
+- 최신 제출 ZIP: https://github.com/tomjovi/tcafe_snow_war_3/releases/download/v1.0.1/noemdeulida-snow-war.zip
+- v1.0.1 자산 `noemdeulida-snow-war.zip`은 24,409 bytes이며, 최신 모바일 스와이프, 홈 버튼, 처치 효과, 10P 점수 개선을 포함합니다.
 
 ## GitHub Pages 상태
 
@@ -62,5 +63,5 @@
 - Pages 배포 소스는 `main` 브랜치 루트(`/`)이며 GitHub API 상태는 `built`입니다.
 - 서비스 URL: https://tomjovi.github.io/tcafe_snow_war_3/
 - 실제 URL에서 HTTP 200과 게임 HTML의 `gameCanvas` 진입점을 확인했습니다.
-- 주의: 최신 개선 커밋 `64ae888`은 로컬 `main`에만 있으며 아직 원격에 push되지 않았습니다. 이후 Git credential과 토큰 환경 변수가 모두 비어 있고, push는 `No anonymous write access`로 실패했습니다. 따라서 라이브 Pages와 v1.0.0 Release 자산은 개선 전 버전입니다.
-- 다음 단계: GitHub 인증을 다시 연결한 뒤 로컬 `main`을 push하고, 최신 `dist/noemdeulida-snow-war.zip`으로 v1.0.1 Release를 만들거나 자산을 갱신합니다. 푸시 후 Pages URL에서 새 `index.html`이 반영됐는지 확인합니다.
+- 최신 게임 커밋은 원격 `main`과 동기화했고, v1.0.1 Release를 생성해 ZIP 자산 업로드를 확인했습니다. 이 handoff 수정은 아직 커밋 전입니다.
+- 다음 단계: handoff 수정사항을 커밋/push하고, Pages URL에서 새 `index.html`이 반영됐는지 확인합니다.
