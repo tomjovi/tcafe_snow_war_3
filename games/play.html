@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#10151b">
+  <title>눈보라 대혼전 — 디자인 시안 플레이</title>
+  <link rel="stylesheet" href="play.css">
+</head>
+<body data-theme="tactical">
+  <main class="shell">
+    <header class="topbar"><a href="../design-options-portrait.html" class="back" aria-label="시안 목록으로">← 시안</a><div class="brand"><span class="brand-icon">❄</span><span><small>눈보라 대혼전 · 플레이 시안</small><strong id="gameTitle">WHITEOUT COMMAND</strong></span></div><span class="draft">DEMO</span></header>
+    <section class="hud" aria-label="게임 상태">
+      <div><small>남은 시간</small><strong id="timer">60</strong></div><div><small>점수</small><strong id="score">0</strong></div><div><small>남은 친구</small><strong id="friends">0</strong></div><div><small>난이도</small><strong id="levelLabel">보통</strong></div>
+    </section>
+    <div class="canvas-wrap"><canvas id="game" aria-label="좌우로 움직이며 자동 공격으로 적과 눈싸움을 하는 게임"></canvas><div class="overlay" id="overlay"><div class="overlay-card"><span class="eyebrow" id="overlayEyebrow">자동 공격 아케이드</span><h1 id="overlayTitle">눈보라 대혼전</h1><p id="overlayText">좌우로 움직여 자동 발사되는 눈덩이를 맞혀요.<br>적의 눈덩이는 피하고, 아이템을 챙기세요!</p><label class="difficulty-control">난이도 <select id="difficulty"><option value="1">1 · 아주 쉬움</option><option value="2">2 · 쉬움</option><option value="3" selected>3 · 보통</option><option value="4">4 · 어려움</option><option value="5">5 · 매우 어려움</option></select></label><button id="start" class="primary">눈싸움 시작</button><a class="return" href="../design-options-portrait.html">다른 시안 고르기</a></div></div></div>
+    <section class="controls"><div><kbd>←</kbd><kbd>→</kbd><span>좌우 이동</span></div><div><span>눈덩이 자동 발사</span></div><div class="mobile-hint">화면 좌우 쓸기 · 자동 공격</div></section>
+    <footer>나뭇가지 하나 · 눈덩이의 궤적은 중력에 따라 휘어집니다</footer>
+  </main>
+  <script src="play.js"></script>
+</body>
+</html>

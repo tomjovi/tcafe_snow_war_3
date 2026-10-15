@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#252c29">
+  <meta name="description" content="70년대 시골 겨울, 나뭇가지로 친구가 던진 눈덩이를 받아치는 물리 기반 눈싸움 야구 시안">
+  <title>눈덩이 야구 — 여섯 번째 시안</title>
+  <link rel="stylesheet" href="baseball.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a href="../design-options-portrait.html" class="back">← 시안</a><div class="brand"><span class="mark">❄</span><span><small>1978 · 강원도 어느 마을</small><strong>눈덩이 야구</strong></span></div><span class="demo">시안 06</span></header>
+    <section class="hud"><div><small>남은 시간</small><strong id="timer">60</strong></div><div><small>점수</small><strong id="score">0</strong></div><div><small>남은 친구</small><strong id="friends">0</strong></div><div><small>난이도</small><strong id="levelLabel">보통</strong></div></section>
+    <div class="stage" id="stage"><canvas id="game" aria-label="친구가 던진 눈덩이를 나뭇가지로 쳐서 되받아치는 겨울 야구 게임"></canvas>
+      <div class="overlay" id="overlay"><div class="card"><span class="eyebrow" id="eyebrow">1978년 겨울방학 · 동네 공터</span><h1 id="overlayTitle">눈덩이 야구</h1><p id="overlayText">콧물을 훌쩍이며 나뭇가지를 든 채 기다려요.<br>친구가 던진 눈덩이를 타이밍 맞춰 쳐서 되돌려요.<br><b>모든 친구를 쓰러뜨리면 라운드 보너스!</b></p><label>난이도<select id="difficulty"><option value="1">1 · 아주 쉬움</option><option value="2">2 · 쉬움</option><option value="3" selected>3 · 보통</option><option value="4">4 · 어려움</option><option value="5">5 · 매우 어려움</option></select></label><button id="start">경기 시작</button><a href="../design-options-portrait.html">다른 시안 보기</a></div></div>
+    </div>
+    <section class="touch-controls" aria-label="터치 조작"><button id="left" aria-label="왼쪽 이동">◀</button><button id="swing">나뭇가지 휘두르기</button><button id="right" aria-label="오른쪽 이동">▶</button></section>
+    <section class="help"><span><kbd>←</kbd><kbd>→</kbd> 이동</span><span><kbd>SPACE</kbd> 스윙</span><span>방향키로 당겨치기·밀어치기</span></section>
+    <footer>눈덩이에 중력이 작용합니다 · 정타는 강하게 날아갑니다</footer>
+  </main>
+  <script src="baseball.js"></script>
+</body>
+</html>
