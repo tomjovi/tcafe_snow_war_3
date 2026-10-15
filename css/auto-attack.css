@@ -1,0 +1,25 @@
+.auto-attack-hint {
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  width: max-content;
+  max-width: 90%;
+  transform: translateX(-50%);
+  padding: 8px 14px;
+  border: 1px solid #b9f5ff3d;
+  border-radius: 999px;
+  background: #0a2039b8;
+  color: #e2f7ff;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: 0 1px 5px #000;
+  box-shadow: 0 4px 18px #0004;
+}
+
+@media (max-width: 650px) {
+  .auto-attack-hint {
+    bottom: 36px;
+    font-size: 10px;
+  }
+}

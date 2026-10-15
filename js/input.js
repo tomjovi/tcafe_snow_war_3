@@ -1,24 +1,25 @@
-/* 마우스·터치·키보드를 하나의 발사/이동 입력으로 정규화합니다. */
+/* 마우스·터치·키보드 입력을 좌우 이동으로 정규화합니다. 공격은 게임에서 자동 실행됩니다. */
 window.SnowInput = class SnowInput {
   constructor(canvas, callbacks) {
-    this.canvas = canvas; this.callbacks = callbacks; this.keys = new Set(); this.heldSources = new Set(); this.pointerDown = false; this.pointerId = null; this.lastPointerX = null;
-    canvas.addEventListener('pointerdown', e => { if (e.button !== undefined && e.button !== 0) return; e.preventDefault(); canvas.setPointerCapture?.(e.pointerId); this.pointerDown = true; this.pointerId = e.pointerId; this.lastPointerX = this.localX(e.clientX); if (e.pointerType !== 'touch') callbacks.move(this.lastPointerX); this.press('pointer'); });
+    this.canvas = canvas; this.callbacks = callbacks; this.keys = new Set(); this.pointerDown = false; this.pointerId = null; this.lastPointerX = null;
+    canvas.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'touch') return;
+      e.preventDefault(); canvas.setPointerCapture?.(e.pointerId); this.pointerDown = true; this.pointerId = e.pointerId; this.lastPointerX = this.localX(e.clientX);
+    });
     canvas.addEventListener('pointermove', e => {
-      if (!this.pointerDown || e.pointerId !== this.pointerId) return;
-      e.preventDefault();
       const currentX = this.localX(e.clientX);
-      if (e.pointerType === 'touch') callbacks.moveBy(currentX - this.lastPointerX);
-      else callbacks.move(currentX);
+      if (e.pointerType === 'touch') {
+        if (!this.pointerDown || e.pointerId !== this.pointerId) return;
+        e.preventDefault(); callbacks.moveBy(currentX - this.lastPointerX);
+      } else callbacks.move(currentX);
       this.lastPointerX = currentX;
     });
-    const release = e => { if (!this.pointerDown || (e && e.pointerId !== this.pointerId)) return; this.pointerDown = false; this.pointerId = null; this.release('pointer'); };
+    const release = e => { if (!this.pointerDown || (e && e.pointerId !== this.pointerId)) return; this.pointerDown = false; this.pointerId = null; };
     canvas.addEventListener('pointerup', release); canvas.addEventListener('pointercancel', release); canvas.addEventListener('lostpointercapture', release);
-    window.addEventListener('keydown', e => { if (['ArrowLeft', 'ArrowRight', 'Space'].includes(e.code)) e.preventDefault(); if (e.code === 'Space' && !e.repeat) this.press('keyboard'); this.keys.add(e.code); });
-    window.addEventListener('keyup', e => { if (e.code === 'Space') this.release('keyboard'); this.keys.delete(e.code); });
-    window.addEventListener('blur', () => { this.keys.clear(); if (this.pointerDown) release(); this.heldSources.clear(); callbacks.cancelCharge(); });
+    window.addEventListener('keydown', e => { if (['ArrowLeft', 'ArrowRight'].includes(e.code)) e.preventDefault(); this.keys.add(e.code); });
+    window.addEventListener('keyup', e => this.keys.delete(e.code));
+    window.addEventListener('blur', () => { this.keys.clear(); if (this.pointerDown) release(); });
   }
-  press(source) { if (this.heldSources.has(source)) return; this.heldSources.add(source); if (this.heldSources.size === 1) this.callbacks.press(source); }
-  release(source) { if (!this.heldSources.delete(source)) return; if (this.heldSources.size === 0) this.callbacks.release(source); }
   localX(clientX) { const rect = this.canvas.getBoundingClientRect(); return clientX - rect.left; }
   direction() { return (this.keys.has('ArrowRight') ? 1 : 0) - (this.keys.has('ArrowLeft') ? 1 : 0); }
 };
