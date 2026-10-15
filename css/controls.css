@@ -4,3 +4,4 @@ button { font: inherit; }
 .settings-card .button { font-size: 12px; }
 .result-card .button-row { display: grid; grid-template-columns: 1.15fr 1.2fr .8fr; gap: 8px; }
 .result-card .button-row .button { min-width: 0; padding-inline: 8px; font-size: 12px; }
+.version-label { color: #8fc8dc; font-size: .86em; letter-spacing: .08em; font-weight: 700; }

@@ -53,9 +53,9 @@
 ## 제출 Release
 
 - 기존 GitHub Release v1.0.0: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.0
-- 최신 제출 GitHub Release v1.0.1: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.1
-- 최신 제출 ZIP: https://github.com/tomjovi/tcafe_snow_war_3/releases/download/v1.0.1/noemdeulida-snow-war.zip
-- v1.0.1 자산 `noemdeulida-snow-war.zip`은 24,409 bytes이며, 최신 모바일 스와이프, 홈 버튼, 처치 효과, 10P 점수 개선을 포함합니다.
+- 이전 제출 GitHub Release v1.0.1: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.1
+- 최신 제출 GitHub Release v1.0.2: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.2
+- v1.0.2 ZIP은 게임 푸터에 버전 표시를 추가한 최신 HTML/CSS를 포함합니다. (빌드 및 업로드 후 자산 크기 기록)
 
 ## GitHub Pages 상태
 
@@ -63,5 +63,5 @@
 - Pages 배포 소스는 `main` 브랜치 루트(`/`)이며 GitHub API 상태는 `built`입니다.
 - 서비스 URL: https://tomjovi.github.io/tcafe_snow_war_3/
 - 실제 URL에서 HTTP 200과 게임 HTML의 `gameCanvas` 진입점을 확인했습니다.
-- 최신 게임 커밋은 원격 `main`과 동기화했고, v1.0.1 Release를 생성해 ZIP 자산 업로드를 확인했습니다. 이 handoff 수정은 아직 커밋 전입니다.
-- 다음 단계: handoff 수정사항을 커밋/push하고, Pages URL에서 새 `index.html`이 반영됐는지 확인합니다.
+- v1.0.1 게임 커밋은 원격 `main`과 동기화했고, v1.0.1 Release의 ZIP 업로드를 확인했습니다.
+- v1.0.2 버전 표시 변경은 아직 커밋/배포 전입니다. 다음 단계는 빌드, main push, GitHub Release 생성, Pages 반영 확인입니다.
