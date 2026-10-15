@@ -25,6 +25,7 @@
 - [x] 적 처치 시 충격파·섬광·방사형 눈 파편·화면 흔들림 연출 추가
 - [x] 점수 단위를 명중 +10P, Perfect +20P, 피격 −10P로 조정; 기존 최고 기록은 10배 환산
 - [x] 변경 후 JavaScript 구문 검사 및 ZIP 최상위 index 확인 (24,409 bytes)
+- [x] 타이틀/Perfect/README 점수 안내를 10P 규칙에 맞춤
 
 ## 파일 구조
 
@@ -61,3 +62,5 @@
 - Pages 배포 소스는 `main` 브랜치 루트(`/`)이며 GitHub API 상태는 `built`입니다.
 - 서비스 URL: https://tomjovi.github.io/tcafe_snow_war_3/
 - 실제 URL에서 HTTP 200과 게임 HTML의 `gameCanvas` 진입점을 확인했습니다.
+- 주의: 최신 개선 커밋 `64ae888`은 로컬 `main`에만 있으며 아직 원격에 push되지 않았습니다. 이후 Git credential과 토큰 환경 변수가 모두 비어 있고, push는 `No anonymous write access`로 실패했습니다. 따라서 라이브 Pages와 v1.0.0 Release 자산은 개선 전 버전입니다.
+- 다음 단계: GitHub 인증을 다시 연결한 뒤 로컬 `main`을 push하고, 최신 `dist/noemdeulida-snow-war.zip`으로 v1.0.1 Release를 만들거나 자산을 갱신합니다. 푸시 후 Pages URL에서 새 `index.html`이 반영됐는지 확인합니다.
