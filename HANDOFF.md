@@ -76,4 +76,4 @@
 - v1.0.1 게임 커밋은 원격 `main`과 동기화했고, v1.0.1 Release의 ZIP 업로드를 확인했습니다.
 - 버전 UI 변경 커밋 `521ffb6`을 `main`에 push하고 v1.0.2 Release 자산 업로드를 완료했습니다. Pages build `1286443002`가 해당 커밋으로 `built` 상태이며, 캐시 우회 요청에서 HTTP 200과 `VERSION v1.0.2` 표시를 확인했습니다.
 - 자동 공격·디자인 검토 페이지 커밋 `ea03ad6`을 2026-10-15에 `main`으로 push했습니다. GitHub Release v1.1.0 ZIP 자산을 확인했습니다. Pages의 게임 및 `/design-options.html`이 모두 HTTP 200이며, 게임 VERSION v1.1.0과 시안 DIRECTION 01–05를 확인했습니다.
-- 이어 기존 다섯 자동 공격 시안 게임과 06번 물리 배팅 게임, 6개의 세로 GIF를 Pages 허브에 연결합니다. 본게임은 수정하지 않으며, 시안 파일은 ZIP 포함 목록에서 제외합니다.
+- 기존 다섯 자동 공격 시안 게임과 06번 물리 배팅 게임, 6개의 세로 GIF를 커밋 `f77cfb9`로 Pages 허브에 배포했습니다. Pages build가 `built`이며 허브·게임 HTML/CSS/JS·GIF 6개 모두 HTTP 200입니다. 각 GIF는 360×640, 24프레임 반복 재생입니다. 본게임 및 제출 ZIP은 변경하지 않았습니다.
