@@ -52,6 +52,7 @@
 
 ## GitHub Pages 상태
 
-- 요청된 Pages 설정은 `main` 브랜치 루트(`index.html`)로 시도했으나 GitHub API가 422로 거부했습니다: `Your current plan does not support GitHub Pages for this repository.`
-- 저장소 API에서 공개 범위는 `private`, 기본 브랜치는 `main`으로 확인했습니다. 공개 저장소 전환 또는 Pages를 지원하는 플랜이 필요합니다.
-- 저장소 공개는 소스와 이력을 누구나 볼 수 있게 바꾸므로 사용자 승인 없이 변경하지 않았습니다. 승인 후 Pages API를 다시 설정하고 `https://tomjovi.github.io/tcafe_snow_war_3/` 배포 상태를 확인하세요.
+- 사용자가 승인한 뒤 저장소를 `public`으로 전환했습니다. 소스와 Git 이력도 공개 상태입니다.
+- Pages 배포 소스는 `main` 브랜치 루트(`/`)이며 GitHub API 상태는 `built`입니다.
+- 서비스 URL: https://tomjovi.github.io/tcafe_snow_war_3/
+- 실제 URL에서 HTTP 200과 게임 HTML의 `gameCanvas` 진입점을 확인했습니다.
