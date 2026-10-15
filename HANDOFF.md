@@ -59,7 +59,7 @@
 - 이전 제출 GitHub Release v1.0.1: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.1
 - 최신 제출 GitHub Release v1.0.2: https://github.com/tomjovi/tcafe_snow_war_3/releases/tag/v1.0.2
 - v1.0.2 ZIP은 게임 푸터에 버전 표시를 추가한 최신 HTML/CSS를 포함합니다. 자산 크기 24,492 bytes.
-- v1.1.0은 자동 공격 및 이동 중심 조작 변경 배포 예정입니다. ZIP은 12개 항목이며 최상위 `index.html`, 자동 공격 스타일을 포함하고 크기는 24,420 bytes입니다.
+- v1.1.0 자동 공격 및 이동 중심 조작 변경을 배포했습니다. ZIP은 12개 항목이며 최상위 `index.html`, 자동 공격 스타일을 포함하고 크기는 24,420 bytes입니다.
 - `design-options.html`은 다섯 시안 검토용 별도 HTML입니다. `tools/build_zip.py`의 포함 대상에 없으므로 게임 ZIP에는 들어가지 않습니다. GitHub Pages에서는 별도 경로 `/design-options.html`에서 미리볼 수 있습니다.
 
 ## GitHub Pages 상태
@@ -70,3 +70,4 @@
 - 실제 URL에서 HTTP 200과 게임 HTML의 `gameCanvas` 진입점을 확인했습니다.
 - v1.0.1 게임 커밋은 원격 `main`과 동기화했고, v1.0.1 Release의 ZIP 업로드를 확인했습니다.
 - 버전 UI 변경 커밋 `521ffb6`을 `main`에 push하고 v1.0.2 Release 자산 업로드를 완료했습니다. Pages build `1286443002`가 해당 커밋으로 `built` 상태이며, 캐시 우회 요청에서 HTTP 200과 `VERSION v1.0.2` 표시를 확인했습니다.
+- 자동 공격·디자인 검토 페이지 커밋 `ea03ad6`을 2026-10-15에 `main`으로 push했습니다. GitHub Release v1.1.0 ZIP 자산을 확인했습니다. Pages의 게임 및 `/design-options.html`이 모두 HTTP 200이며, 게임 VERSION v1.1.0과 시안 DIRECTION 01–05를 확인했습니다.
