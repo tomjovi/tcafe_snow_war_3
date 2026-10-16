@@ -244,7 +244,7 @@ def scene_baseball(frame):
     d.line((px+2,py-36,px+6,py-27),fill="#77bdca",width=3);d.ellipse((px+4,py-28,px+8,py-22),fill="#b9edf1")
     # branch winds up, sweeps through, then follows through
     phase=frame/23
-    angle=-1.35+min(1,phase*1.45)*2.45
+    angle=1.25-min(1,phase*1.45)*2.45
     tip=(px+int(cos(angle)*67),py-23+int(sin(angle)*67))
     d.line((px+5,py-29,tip[0],tip[1]),fill="#4e3929",width=10)
     d.line((px+5,py-29,tip[0],tip[1]),fill="#b18a5c",width=5)
